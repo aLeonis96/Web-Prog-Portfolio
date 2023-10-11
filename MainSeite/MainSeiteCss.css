@@ -1,12 +1,32 @@
+/***************
+* ALLGEMEINE LAYOUT *
+****************/
+
 html,body{
     margin: 0;
     padding: 0;
     
 }
+
+html{
+    background-color: whitesmoke;
+    font-family: cursive;
+}
+
+a, a:visited{
+    color: white;
+    text-decoration: none;
+
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
 /************
 * KOPFBEREICH *
 *************/
-header{
+header, footer{
     background-color: #0EA5FD;
     color: white;
     box-shadow: 1px 1px 10px rgb(0, 0, 0, 0.5);
@@ -21,6 +41,7 @@ header img{
 h1{
     font-size: 400%;
     margin: 0px;
+    color: white;
 }
 
 header .brandname{
@@ -29,20 +50,10 @@ header .brandname{
     
 }
 
-a, a:visited{
-    color: white;
-    text-decoration: none;
-
-}
-
-a:hover{
-    text-decoration: underline;
-}
-
 .nav{
     display: flex;
     flex-direction: row;
-    font-size: 150%;
+    font-size: 120%;
     
 }
 .nav_Menue{
@@ -57,7 +68,7 @@ a:hover{
     width: 50%;
 }
 
-@media  screen and (max-width:55rem){
+@media  screen and (max-width:60rem){
     .hideIfSmall {
         width:0;
         font-size:0;
@@ -71,4 +82,111 @@ a:hover{
     h1{
         font-size: 200%;
     }
+   
 }
+
+/*************
+    * BODY *
+    *************/
+
+.bodyHeader{
+    color: #0EA5FD;
+    font-size: 250%;
+}
+
+.Container_for_Products{
+
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    width: 100%;
+}
+
+
+.produkt{
+    
+    background-color: white;
+    border-style: outset;
+    
+    width: 220px;
+    height: 220px;
+    
+    
+}
+
+.produkt:hover{
+    box-shadow: 1px 1px 10px rgb(14, 165, 253, 1);
+}
+    
+@media screen and (max-width:30rem) {
+    .Container_for_Products{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .produkt{
+        width: auto;
+        min-height: 220px;
+    }
+}
+
+@media screen and (min-width:30rem) {
+    .Container_for_Products{
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+    
+    .produkt{
+        width: 220px;
+        min-height: 220px;
+    }
+    
+}
+
+/**************
+* FOOTBEREICH*
+**************/
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+    margin-top: 1rem;
+    gap:1rem;
+}
+
+footer h3{
+    margin-bottom: 2px;
+}
+
+footer .divisionLayout{
+    
+    align-items: start;
+}
+
+footer ul{
+    list-style: none;
+    padding: 0;
+    margin-top: 2px;
+    
+    display: flex;
+    flex-direction: column;
+ 
+}
+
+@media screen and (max-width:30rem) {
+    
+    footer{
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+
+    footer .divisionLayout{
+        width: 100%;
+    }
+
+    
+}
+
