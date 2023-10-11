@@ -2,6 +2,9 @@
 * ALLGEMEINE LAYOUT *
 ****************/
 
+html{
+    height: 100%;
+}
 html,body{
     margin: 0;
     padding: 0;
@@ -22,6 +25,7 @@ a, a:visited{
 a:hover{
     text-decoration: underline;
 }
+
 
 /************
 * KOPFBEREICH *
@@ -88,6 +92,9 @@ header .brandname{
 /*************
     * BODY *
     *************/
+main{
+    margin-left: 1rem;
+}
 
 .bodyHeader{
     color: #0EA5FD;
@@ -110,15 +117,72 @@ header .brandname{
     
     width: 220px;
     height: 220px;
+    border-radius: 20px;
+    
     
     
 }
 
-.produkt:hover{
-    box-shadow: 1px 1px 10px rgb(14, 165, 253, 1);
+.produktImageSmall{
+    width:auto;
+    height:110px;
+    background-color:yellow;
+    margin: 0;
+
+    border-radius: 20px 20px 0 0;
 }
+
+.produktTitle{
+    width:auto;
+    height:70px;
+    background-color: green;
+}
+
+.produktActions{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
     
+    gap:1rem;
+
+    width: auto;
+    height: 40px;
+    
+    
+}
+.produktActions>a{
+    
+    text-decoration: none;
+    font-size: 150%;
+
+    text-align: center;
+    padding-right: 0.5rem;
+
+    
+   
+    -webkit-appearance: button;
+    border-radius: 50%;
+    background-color:  #0EA5FD;
+}
+.produktActions>a:hover{
+box-shadow: 1px 1px 1px 1px rgb(0, 0, 0, 0.5) ;
+}
+
+.produktActions> .hearticon-{
+    margin:0.1rem;
+    padding-left: 0.3em;
+    
+}
+
+.produktActions> .carticon-{
+    margin:0.1rem;
+    padding-left: 0.2em;
+}
+
 @media screen and (max-width:30rem) {
+    main{
+        margin: 1rem;
+    }
     .Container_for_Products{
         display: flex;
         flex-direction: column;
@@ -128,9 +192,14 @@ header .brandname{
         width: auto;
         min-height: 220px;
     }
+
+    
 }
 
 @media screen and (min-width:30rem) {
+    main{
+        margin: 1rem;
+    }
     .Container_for_Products{
         flex-wrap: wrap;
         gap: 2rem;
@@ -140,6 +209,8 @@ header .brandname{
         width: 220px;
         min-height: 220px;
     }
+
+    
     
 }
 
