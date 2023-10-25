@@ -1,0 +1,119 @@
+/*************
+    * Produkt Container *
+    *************/
+
+    
+    
+    .Container_for_Products{
+    
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        width: 100%;
+    }
+    
+    
+    .produkt{
+        
+        background-color: white;
+        border-style: outset;
+        
+        width: 100%;
+        height: 220px;
+        border-radius: 20px;
+        border: 1px solid lightgray;
+        
+        
+        
+    }
+    
+    .produktImageSmall{
+        width:auto;
+        height:130px;
+        
+        margin: 0;
+        overflow: hidden;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .produktImageSmall > img{
+        position: center;
+        height: 130px;
+        width: 100%;
+    }
+    
+    .produktTitle{
+        width:auto;
+        height:50px;
+        border-top: 1px solid lightgrey;
+    }
+    
+    .produktActions{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        
+        gap:1rem;
+    
+        width: auto;
+        height: 40px;
+        
+        
+    }
+    .produktActions>a{
+        
+        text-decoration: none;
+        font-size: 150%;
+    
+        text-align: center;
+        padding-right: 0.5rem;
+    
+        
+       
+        -webkit-appearance: button;
+        border-radius: 50%;
+        background-color:  #0EA5FD;
+    }
+    .produktActions>a:hover{
+    box-shadow: 1px 1px 1px 1px rgb(0, 0, 0, 0.5) ;
+    }
+    
+    .produktActions> .hearticon-{
+        margin:0.1rem;
+        padding-left: 0.3em;
+        
+    }
+    
+    .produktActions> .carticon-{
+        margin:0.1rem;
+        padding-left: 0.2em;
+    }
+    
+    @media screen and (max-width:30rem) {
+        
+        .Container_for_Products{
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .produkt{
+            width: 100%;
+            min-height: 220px;
+        }
+    
+        
+    }
+    
+    @media screen and (min-width:30rem) {
+       
+        .Container_for_Products{
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .produkt{
+            width: 220px;
+            min-height: 220px;
+        }
+     }
+    

@@ -1,0 +1,59 @@
+.produktDetails{
+   
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    width: 100%;
+}
+
+.imgDiv{
+    width:auto;
+    height: auto;
+    overflow: hidden;
+}
+.imgDiv >img{
+    width: 100%;
+    height: auto;
+    
+    
+}
+.descriptionDiv{
+    display: flex;
+    flex-direction: column;
+    
+    opacity: 50%;
+}
+#description{
+    margin-bottom: 4rem;
+}
+.ratingPriceDiv{
+    display: flex;
+    flex-direction: row;
+}
+
+#rating{
+    width: 50%;
+}
+
+#price{
+   align-content: flex-end;
+   width: 50%;
+   text-align: right;
+}
+
+
+
+
+
+@media screen and (min-width:40rem) {
+    
+    .produktDetails{
+        display: flex;
+        flex-direction: row;
+    }
+    
+   
+  
+
+}
+
