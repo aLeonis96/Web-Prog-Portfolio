@@ -1,15 +1,37 @@
 
 
-const urlParams = new URLSearchParams(window.location.search);
-const id = urlParams.get('id');
 
-const produkt = fetch('https://dummyjson.com/product/' + id)
+
+    
+    
+
+
+
+displayProduktDetails();
+
+function displayProduktDetails(){
+    
+
+        urlParams = new URLSearchParams(window.location.hash);
+        console.log(urlParams);
+        id = urlParams.get('#/id'); 
+
+
+    let pDS = document.getElementById('ProduktDesplaySeite');
+    
+
+    let produktDetails = document.createElement('div');
+    produktDetails.id = 'produktDetails';
+    
+
+   let produkt = fetch('https://dummyjson.com/product/' + id)
                 .then(res => res.json())
                 .then(response =>{
-
-                    produktDetails= document.getElementById('produktDetails');
                     
-                    produktTitle = document.getElementById('produktTitle');
+                    
+                    
+                    produktTitle = document.createElement('div');
+                    produktTitle.id='produktTitle';
                     produktTitle.innerHTML= response.title;
 
                     imgDiv = document.createElement('div');
@@ -53,6 +75,17 @@ const produkt = fetch('https://dummyjson.com/product/' + id)
                     produktDetails.appendChild(imgDiv);
                     produktDetails.appendChild(descriptionDiv);
                     produktDetails.appendChild(actionsDiv);
+
+                    pDS.appendChild(produktTitle);
+                    pDS.appendChild(produktDetails);
+                    
+                    
+
+                    
+                   
                     
                 });
 
+                produkt = null;
+
+}

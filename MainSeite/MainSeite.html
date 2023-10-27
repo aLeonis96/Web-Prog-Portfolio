@@ -13,6 +13,45 @@
         <link rel="stylesheet" href="MainSeiteCss.css" />
         <link rel="stylesheet" href="searchBar.css">
         <link rel="stylesheet" href="Fontello/css/fontello.css" />
+
+        <script src="router.js"></script>
+        <script>
+            window.addEventListener("load", () => {
+                /**
+                 * Hilfsfunktion zum Umschalten des sichtbaren Inhalts
+                 *
+                 * @param {String} id HTML-ID des anzuzeigenden <main>-Elements
+                 * @param {String} title Neuer Titel für den Browser-Tab
+                 */
+                let swapContent = (id, title) => {
+                    document.querySelectorAll("section").forEach(mainElement => {
+                        mainElement.classList.add("hidden");
+                    })
+    
+                    let element = document.querySelector(`#${id}`);
+                    if (element) element.classList.remove("hidden");
+    
+                     document.title = `${title} `;
+                     
+                }
+    
+                /**
+                 * Konfiguration des URL-Routers
+                 */
+                let routes = [
+                    {
+                        url: "^/$",
+                        show: () => swapContent("startSeite", "Ovelix"),
+                    },{
+                        url: "^/id",
+                        show: () => swapContent("ProduktDesplaySeite", "Produkt"),
+                    }
+                ];
+    
+                let router = new Router(routes);
+                router.start();
+            });
+        </script>
     
     </head>
     <body>
@@ -44,12 +83,22 @@
                 </div>
             </section>
             
-            <section>
+            <!-- ========================== -->
+            <!-- Inhalt der Startseite -->
+            <!-- ========================== -->
+
+            <section id="startSeite" class="hidden">
                 <h1 class="bodyHeader">Beliebte Produkte</h1>
+            </section>
+
+            <!-- ========================== -->
+            <!-- Inhalt der Produkt Details Display Seite -->
+            <!-- ========================== -->
+
+            <section id="ProduktDesplaySeite" class="hidden">
+                <h1  id="produktTitle" class="bodyHeader">Loren Ipsum</h1>
                 
-                <div id="beliebte_produkte" class="Container_for_Products">
-                </div>
-                
+                <a  id="1" href="#/" style="color: black;">Zurück zur Startseite</a>
             </section>
         </main>
 
@@ -92,5 +141,8 @@
     </body>
     <script src="scriptMainSeite.js"></script>
     <script src="scriptSearchProduct.js"></script>
+    <script src="scriptProduktDetails.js"></script>
+    
+
 
 </html>

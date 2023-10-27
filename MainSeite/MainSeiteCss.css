@@ -1,6 +1,10 @@
 /***************
 * ALLGEMEINE LAYOUT *
 *********/
+
+.hidden{
+    display: none;
+}
 * {
 	border: 0;
 	box-sizing: border-box;
@@ -61,7 +65,7 @@ main{
 
 @media screen and (min-width:30rem) {
     main{
-        margin: 1rem;
+        margin: 2rem;
     }
     
 }

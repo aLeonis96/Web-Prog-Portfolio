@@ -1,10 +1,17 @@
 
-const beliebteProdukte = document.getElementById("beliebte_produkte");
 
 
+displayMainSeite();
 
 
-let beliebteProdukts =  fetch('https://dummyjson.com/products?limit=0')
+function displayMainSeite(){
+    const mainSection = document.getElementById('startSeite');
+    
+    const beliebteProdukte = document.createElement('div');
+    beliebteProdukte.id = 'beliebte_produkte';
+    beliebteProdukte.className='Container_for_Products';
+
+    let selectedBeliebteProdukten =  fetch('https://dummyjson.com/products?limit=0')
                         .then(res => res.json())
                         .then(produkte =>{
                             produkte = produkte.products
@@ -43,22 +50,27 @@ let beliebteProdukts =  fetch('https://dummyjson.com/products?limit=0')
                                 produkt.appendChild(title);
                                 produkt.appendChild(produktActions);
                                 
+                                rootIdentifier = document.createElement('a');
+                                rootIdentifier.href= `MainSeite.html#/id=${element.id}`;
+                                
+                                rootIdentifier.appendChild(produkt);
+                                beliebteProdukte.appendChild(rootIdentifier);
+                                
+                                mainSection.appendChild(beliebteProdukte);
 
+                               
+                               produkt.addEventListener('click', () => {
                                 
-                                console.log(produkt)
-                                beliebteProdukte.appendChild(produkt);
                                 
-                                produkt.addEventListener('click', () => {
-                                    // Redirect to the product details page
-                                    window.location.href = 'DisplayProduktDetails.html?id=' + element.id;
-                                    
-                                  });
+                                displayProduktDetails();
+                            });
+                                
                                
                             }
                         })
                     });
 
-
+                }
 
                         
                            
