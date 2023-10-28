@@ -9,9 +9,11 @@ header, footer{
     
     
 }
+
 header img{
     width: 4rem;
     height: 4rem;
+    
 }
 h1{
     font-size: 400%;
@@ -25,6 +27,12 @@ header .brandname{
     
 }
 
+.brandname img{
+    cursor: pointer;
+}
+.brandname h1{
+    cursor: pointer;
+}
 .nav{
     display: flex;
     flex-direction: row;
