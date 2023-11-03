@@ -12,8 +12,8 @@
     overflow: hidden;
 }
 .imgDiv >img{
-    width: 100%;
-    height: auto;
+    width: 450px;
+    height: 450px;
     
     
 }
@@ -21,7 +21,7 @@
     display: flex;
     flex-direction: column;
     
-    opacity: 50%;
+    color: #0EA5FD;
 }
 #description{
     margin-bottom: 4rem;

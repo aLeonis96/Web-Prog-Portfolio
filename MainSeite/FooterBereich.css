@@ -2,12 +2,14 @@
 * FOOTBEREICH*
 **************/
 footer{
+    
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     
     margin-top: 1rem;
     gap:1rem;
+    flex-shrink: 0;
 }
 
 footer h3{
@@ -50,7 +52,10 @@ footer ul{
 }
 
 @media screen and (max-width:480px) {
-.hideIfSmallFooter {
+    .hideIfSmallFooter {
     width:0;
     font-size:0;
+
+    
+}
 }

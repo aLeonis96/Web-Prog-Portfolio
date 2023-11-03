@@ -1,6 +1,14 @@
 
 
-
+/******
+*  Funktion zum Display der beliebtesten Produkten. Sie wird automatisch mit dem Aufrufen der Webseite ausgeführt. 
+*  Ziel der Funktion ist, die  beliebtesten (Rating > 4.9)  Produkten auf der Haupseite darzustellen. 
+*  
+*  Die beliebtesten Produkten werden gefetched und Produkte divs werden für alle Produkte dynamisch erstellt. Die Produkte werden anfangs in anchor <a>
+*  gekapselt und als Attribute href bekommen Sie => #/id(produkt.id). Danach werden Sie in der Sektion ProduktDesplaySeite gekapselt.
+*  Da jedes Produkt ein eindeutiges href hat, kann der Router erkennen, dass auf das Produkt geklickt worden ist und die entsprechenden Produktinformationen 
+*  mithilfe der displayProduktDetails() Funktion darstellen.     
+*/
 displayMainSeite();
 
 
@@ -14,6 +22,8 @@ function displayMainSeite(){
     let selectedBeliebteProdukten =  fetch('https://dummyjson.com/products?limit=0')
                         .then(res => res.json())
                         .then(produkte =>{
+                            
+                            
                             produkte = produkte.products
                             produkte.forEach(element => {
                             if (element.rating > 4.9){
@@ -41,29 +51,24 @@ function displayMainSeite(){
                                 img.src= element.images[1];
                                 imgDiv.appendChild(img);
 
-                                produktActions = document.createElement('div');
-                                produktActions.className='produktActions' ;
-                                produktActions.innerHTML = '<a href="" class="hearticon-"></a> <a href="" class="carticon-"></a>'
+                                produktPrice = document.createElement('div');
+                                produktPrice.className='produktPrice';
+                                produktPrice.innerHTML=element.price + "€";
                                 
                                 
                                 produkt.appendChild(imgDiv);
                                 produkt.appendChild(title);
-                                produkt.appendChild(produktActions);
+                                produkt.appendChild(produktPrice);
                                 
                                 rootIdentifier = document.createElement('a');
-                                rootIdentifier.href= `MainSeite.html#/id=${element.id}`;
+                                rootIdentifier.href= `#/id=${element.id}`;
                                 
                                 rootIdentifier.appendChild(produkt);
                                 beliebteProdukte.appendChild(rootIdentifier);
                                 
+                                
                                 mainSection.appendChild(beliebteProdukte);
 
-                               
-                               produkt.addEventListener('click', () => {
-                                
-                                
-                                displayProduktDetails();
-                            });
                                 
                                
                             }

@@ -7,14 +7,15 @@
         <link rel="shortcut icon" href="img/UnternehmensLogo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="KopfBereichCss.css" />
-        <link rel="stylesheet" href="FooterBereich.css" />
-        <link rel="stylesheet" href="ProduktContainer.css">
-        <link rel="stylesheet" href="MainSeiteCss.css" />
+        <link rel="stylesheet" href="kopfBereich.css" />
+        <link rel="stylesheet" href="footerBereich.css" />
+        <link rel="stylesheet" href="produktContainer.css">
+        <link rel="stylesheet" href="mainSeite.css" />
         <link rel="stylesheet" href="searchBar.css">
         <link rel="stylesheet" href="Fontello/css/fontello.css" />
+        <link rel="stylesheet" href="displayProduktDetails.css">
 
-        <script src="router.js"></script>
+        
         <script>
             window.addEventListener("load", () => {
                 /**
@@ -43,10 +44,21 @@
                         url: "^/$",
                         show: () => swapContent("startSeite", "Ovelix"),
                     },{
-                        url: "^/id",
-                        show: () => swapContent("ProduktDesplaySeite", "Produkt"),
-                    }
-                ];
+                        url: "^/id=(.*)$",
+                        show: (matches) => {
+                            
+                            displayProduktDetails(matches);
+                            swapContent("ProduktDesplaySeite", "Produkt");
+                    },
+                    },{
+                        url: "^/search=(.*)$",
+                        show: (matches) => {
+                            executeSearch(matches);
+                            swapContent("SuchErgebnisDisplay", "Search Result");
+                    },
+                }
+                
+                ]
     
                 let router = new Router(routes);
                 router.start();
@@ -55,10 +67,14 @@
     
     </head>
     <body>
+
+        <!-- ========================== -->
+        <!-- Header -->
+        <!-- ========================== -->
         <header>
             <div class="brandname">
-                <img src="img/UnternehmensLogo.png" alt=""/>
-                <h1>Ovelix e-Shop</h1>
+                <a  href="#/"><img src="img/UnternehmensLogo.png" alt=""/></a>
+                <a  href="#/"><hi>Ovelix e-Shop</hi></a>
             </div>
             <div class="nav" >
                 <div class="nav_Menue">
@@ -73,21 +89,25 @@
             </div>
         </header>
         <main>
-            
-            <section id="searchDivision">
+
+            <!-- ========================== -->
+            <!-- Searchbar -->
+            <!-- ========================== -->
+            <searchSection id="searchDivision">
+                <div class="search-bar" style="color: #0EA5FD;">Klicke auf das Search Icon damit du ein beliebiges Produkt suchen kannst.</div>
                 <div class="search-bar">
                     <input id="input" type="search" name="search" required>
                     <button class="search-btn" type="submit">
                         <span>Search</span>
                     </button>
                 </div>
-            </section>
+            </searchSection>
             
             <!-- ========================== -->
             <!-- Inhalt der Startseite -->
             <!-- ========================== -->
 
-            <section id="startSeite" class="hidden">
+            <section id="startSeite" >
                 <h1 class="bodyHeader">Beliebte Produkte</h1>
             </section>
 
@@ -95,13 +115,19 @@
             <!-- Inhalt der Produkt Details Display Seite -->
             <!-- ========================== -->
 
-            <section id="ProduktDesplaySeite" class="hidden">
-                <h1  id="produktTitle" class="bodyHeader">Loren Ipsum</h1>
-                
-                <a  id="1" href="#/" style="color: black;">Zurück zur Startseite</a>
-            </section>
+            <section id="ProduktDesplaySeite" ></section>
+
+            <!-- ========================== -->
+            <!-- Inhalt der Suchergebnis -->
+            <!-- ========================== -->
+
+            <section id="SuchErgebnisDisplay"></section>
+
         </main>
 
+        <!-- ========================== -->
+        <!-- Footer -->
+        <!-- ========================== -->
 
         <footer>
                 <div class="divisionLayout">
@@ -139,9 +165,14 @@
                 
         </footer>
     </body>
-    <script src="scriptMainSeite.js"></script>
+
+    <script src="mainSeite.js"></script>
+    <script src="searchProduct.js"></script>
+    <script src="displayProduktDetails.js"></script>
     <script src="scriptSearchProduct.js"></script>
-    <script src="scriptProduktDetails.js"></script>
+    <script src="displaySearchResult.js"></script>
+    <script src="router.js"></script>
+    
     
 
 

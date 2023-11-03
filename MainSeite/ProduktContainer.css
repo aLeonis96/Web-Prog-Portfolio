@@ -22,6 +22,8 @@
         height: 220px;
         border-radius: 20px;
         border: 1px solid lightgray;
+
+        color: #0EA5FD;
         
         
         
@@ -46,49 +48,18 @@
         width:auto;
         height:50px;
         border-top: 1px solid lightgrey;
+
+        padding-left: 0.25rem;
     }
     
-    .produktActions{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        
-        gap:1rem;
-    
-        width: auto;
-        height: 40px;
-        
-        
-    }
-    .produktActions>a{
-        
-        text-decoration: none;
-        font-size: 150%;
-    
-        text-align: center;
-        padding-right: 0.5rem;
-    
-        
-       
-        -webkit-appearance: button;
-        border-radius: 50%;
-        background-color:  #0EA5FD;
-    }
-    .produktActions>a:hover{
-    box-shadow: 1px 1px 1px 1px rgb(0, 0, 0, 0.5) ;
+
+    .produktPrice{
+        text-align: right;
+        padding: 1rem;
+        margin-bottom: 1rem;
     }
     
-    .produktActions> .hearticon-{
-        margin:0.1rem;
-        padding-left: 0.3em;
-        
-    }
-    
-    .produktActions> .carticon-{
-        margin:0.1rem;
-        padding-left: 0.2em;
-    }
-    
+
     @media screen and (max-width:30rem) {
         
         .Container_for_Products{

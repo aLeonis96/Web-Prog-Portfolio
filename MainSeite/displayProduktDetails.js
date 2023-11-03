@@ -1,27 +1,22 @@
 
 
-
-
-    
+function displayProduktDetails(matches){
     
 
-
-
-displayProduktDetails();
-
-function displayProduktDetails(){
-    
-
-        urlParams = new URLSearchParams(window.location.hash);
-        console.log(urlParams);
-        id = urlParams.get('#/id'); 
+        id= matches[1];
 
 
     let pDS = document.getElementById('ProduktDesplaySeite');
-    
+    pDS.innerHTML = '';
 
     let produktDetails = document.createElement('div');
-    produktDetails.id = 'produktDetails';
+    produktDetails.className = 'produktDetails';
+
+    let commentThread = document.createElement('div');
+
+    let comment = document.createElement('div');
+    comment.className = 'comment';
+
     
 
    let produkt = fetch('https://dummyjson.com/product/' + id)
@@ -30,8 +25,8 @@ function displayProduktDetails(){
                     
                     
                     
-                    produktTitle = document.createElement('div');
-                    produktTitle.id='produktTitle';
+                    produktTitle = document.createElement('h1');
+                    produktTitle.className='bodyHeader';
                     produktTitle.innerHTML= response.title;
 
                     imgDiv = document.createElement('div');
@@ -76,16 +71,40 @@ function displayProduktDetails(){
                     produktDetails.appendChild(descriptionDiv);
                     produktDetails.appendChild(actionsDiv);
 
+                   
+
+                    fetch('https://dummyjson.com/comments/post/' + id)
+                            .then(res => res.json())
+                            .then(data =>{
+                                    comments = data.comments
+                                    
+                                
+                                    comments.forEach(commentData => {
+                                        
+                                        
+
+                                        userName = document.createElement('div');
+                                        userName.className='userName';
+                                        userName.textContent = `Benutzer: ${commentData.user.username}`;
+                                        
+
+                                        commentBody = document.createElement('div');
+                                        commentBody.className='commentBody';
+                                        commentBody.textContent = commentData.body;
+
+                                        comment.appendChild(userName);
+                                        comment.appendChild(commentBody);
+                                        commentThread.appendChild(comment);
+
+                                        
+                                    })
+                            })
+
+
+
+
                     pDS.appendChild(produktTitle);
                     pDS.appendChild(produktDetails);
-                    
-                    
-
-                    
-                   
-                    
-                });
-
-                produkt = null;
-
+                    pDS.appendChild(commentThread);
+            });
 }

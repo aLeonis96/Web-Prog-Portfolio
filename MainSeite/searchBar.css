@@ -1,5 +1,12 @@
+/* 
+	Searchbar ist Kopiert. Ich habe nur paar style anpassungen gemacht, damit es farbig zum Inhalt passt.
+
+*/
+
+
+
 button, input {
-	font-family: cursive;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;;
 	line-height: 1.5em;
 }
  input {
