@@ -1,5 +1,5 @@
 
-
+ 
 
 
 function executeSearch(matches){
@@ -13,7 +13,7 @@ function executeSearch(matches){
                     if (data.total == 0){
 
                     parargraphMissingProdukt = document.createElement('p');
-                    parargraphMissingProdukt.innerHTML = 'Das gesuchte Produkt existiert leider nicht. Klicken sie auf das Unternehmens Logo bzw. Name um auf die Hauptseite zu landen';
+                    parargraphMissingProdukt.innerHTML = 'Das gesuchte Produkt existiert leider nicht. Klicken Sie auf das Unternehmens Logo bzw. Name um auf die Hauptseite zu landen';
                     document.getElementById('SuchErgebnisDisplay').appendChild(parargraphMissingProdukt);
                     
                     }else{

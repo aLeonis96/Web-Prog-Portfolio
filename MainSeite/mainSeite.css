@@ -3,9 +3,6 @@
 *********/
 
 
-p{
-    color:#0EA5FD ;
-}
 
 .hidden{
     display: none;
@@ -15,7 +12,7 @@ p{
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Cabin', sans-serif;
     
 }
 
@@ -26,7 +23,7 @@ html,body {
 
 
 html{
-    background-color: rgb(231,254,255);
+    background-color: #FFFBF5;
     font-family: cursive;
 }
 
@@ -61,8 +58,8 @@ main{
 }
 
 .bodyHeader{
-    color: #0EA5FD;
-    font-size: 250%;
+    color: #4E4FEB;
+    
     margin-bottom: 1rem;
 }
 
@@ -71,7 +68,7 @@ main{
         margin: 1rem;
     }
     .bodyHeader{
-        color: #0EA5FD;
+        color: #4E4FEB;
         font-size: 120%;
         margin-bottom: 1rem;
     }

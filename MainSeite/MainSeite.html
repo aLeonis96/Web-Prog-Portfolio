@@ -14,7 +14,10 @@
         <link rel="stylesheet" href="searchBar.css">
         <link rel="stylesheet" href="Fontello/css/fontello.css" />
         <link rel="stylesheet" href="displayProduktDetails.css">
-
+        <link rel="stylesheet" href="starRating.css"> <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@500&family=Sometype+Mono:wght@400;500&display=swap" rel="stylesheet">
+        
         
         <script>
             window.addEventListener("load", () => {
@@ -54,7 +57,7 @@
                         url: "^/search=(.*)$",
                         show: (matches) => {
                             executeSearch(matches);
-                            swapContent("SuchErgebnisDisplay", "Search Result");
+                            swapContent("SuchErgebnisDisplay", matches[1]);
                     },
                 }
                 
@@ -87,14 +90,12 @@
                     
                 </div>
             </div>
-        </header>
-        <main>
-
             <!-- ========================== -->
             <!-- Searchbar -->
             <!-- ========================== -->
+            
             <searchSection id="searchDivision">
-                <div class="search-bar" style="color: #0EA5FD;">Klicke auf das Search Icon damit du ein beliebiges Produkt suchen kannst.</div>
+                <div class="search-bar" style="color: white;">Klicken Sie auf das Search Icon damit Sie ein beliebiges Produkt suchen können.</div>
                 <div class="search-bar">
                     <input id="input" type="search" name="search" required>
                     <button class="search-btn" type="submit">
@@ -103,12 +104,16 @@
                 </div>
             </searchSection>
             
+        </header>
+        <main>
+
+            
             <!-- ========================== -->
             <!-- Inhalt der Startseite -->
             <!-- ========================== -->
 
             <section id="startSeite" >
-                <h1 class="bodyHeader">Beliebte Produkte</h1>
+                <h3 class="bodyHeader">Beliebte Produkte</h3>
             </section>
 
             <!-- ========================== -->
@@ -169,7 +174,7 @@
     <script src="mainSeite.js"></script>
     <script src="searchProduct.js"></script>
     <script src="displayProduktDetails.js"></script>
-    <script src="scriptSearchProduct.js"></script>
+    <script src="SearchProduct.js"></script>
     <script src="displaySearchResult.js"></script>
     <script src="router.js"></script>
     

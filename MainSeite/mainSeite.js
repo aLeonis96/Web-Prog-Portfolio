@@ -19,7 +19,7 @@ function displayMainSeite(){
     beliebteProdukte.id = 'beliebte_produkte';
     beliebteProdukte.className='Container_for_Products';
 
-    let selectedBeliebteProdukten =  fetch('https://dummyjson.com/products?limit=0')
+     fetch('https://dummyjson.com/products?limit=0')
                         .then(res => res.json())
                         .then(produkte =>{
                             
@@ -43,7 +43,7 @@ function displayMainSeite(){
                                 imgDiv = document.createElement('div');
                                 imgDiv.className= 'produktImageSmall';
                                 
-                               
+                                
                                                                
                                 
                                 
@@ -55,6 +55,11 @@ function displayMainSeite(){
                                 produktPrice.className='produktPrice';
                                 produktPrice.innerHTML=element.price + "€";
                                 
+                                if(element.discountPercentage >= 15){
+                                    produktPrice.innerHTML = " <span style='font-size:14px; text-decoration: line-through;' ><b> " +element.price + "€ </span> <span style='color:red;'>  " +(element.price-(element.price*element.discountPercentage/100)).toFixed(2) + " € </span";
+                                }else{
+                                    produktPrice.innerHTML = '<b> ' +element.price + '€ </b>';
+                                }
                                 
                                 produkt.appendChild(imgDiv);
                                 produkt.appendChild(title);

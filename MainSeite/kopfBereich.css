@@ -4,10 +4,11 @@
 
 
 header, footer{
-    background-color: #0EA5FD;
+    background-color: #4E4FEB;
     color: white;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
     padding: 1rem;
+    
 }
 
 header img{

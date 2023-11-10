@@ -42,14 +42,14 @@ button, input {
 }
 .search-bar {
 	margin: auto;
-	padding: 1.5em;
+	
 	justify-content: center;
 	max-width: 30em;
 }
 .search-bar input {
 	background: transparent;
 	border-radius: 1.5em;
-	box-shadow: 0 0 0 0.4em #0EA5FD inset;
+	box-shadow: 0 0 0 0.4em white inset;
 	padding: 0.75em;
 	transform: translate(0.5em,0.5em) scale(0.5);
 	transform-origin: 100% 0;
@@ -68,7 +68,7 @@ button, input {
 	transform: scale(1);
 }
 .search-btn {
-	background: #0EA5FD;
+	background: white;
 	border-radius: 0 0.75em 0.75em 0 / 0 1.5em 1.5em 0;
 	padding: 0.75em;
 	position: relative;
@@ -84,14 +84,14 @@ button, input {
 }
 .search-btn:before {
 	border-radius: 50%;
-	box-shadow: 0 0 0 0.2em #f1f1f1 inset;
+	box-shadow: 0 0 0 0.2em blue inset;
 	top: 0.75em;
 	left: 0.75em;
 	width: 1.2em;
 	height: 1.2em;
 }
 .search-btn:after {
-	background: #f1f1f1;
+	background: #4E4FEB;
 	border-radius: 0 0.25em 0.25em 0;
 	top: 51%;
 	left: 51%;
@@ -110,7 +110,7 @@ button, input {
 /* Active state */
 .search-bar input:focus + .search-btn,
 .search-bar input:valid + .search-btn {
-	background: #0EA5FD;
+	background: weight;
 	border-radius: 0 0.375em 0.375em 0;
 	transform: scale(1);
 }
@@ -123,7 +123,7 @@ button, input {
 .search-bar input:focus + .search-btn:hover,
 .search-bar input:valid + .search-btn:hover,
 .search-bar input:valid:not(:focus) + .search-btn:focus {
-	background: #0c48db;
+	background: leightgrey;
 }
 .search-bar input:focus + .search-btn:active,
 .search-bar input:valid + .search-btn:active {
@@ -141,6 +141,6 @@ button, input {
 		box-shadow: 0 0 0 0.1em #0EA5FD inset;
 	}
 	.search-btn {
-		background: #f1f1f1;
+		background: lightgrey;
 	}
 }
